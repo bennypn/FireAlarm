@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "280991420492",
+    "firebase_url": "https://firealarm-7c4b1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "firealarm-7c4b1",
+    "storage_bucket": "firealarm-7c4b1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280991420492:android:3d39b378e401070b76e4e9",
+        "android_client_info": {
+          "package_name": "com.example.firealarm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPSwfBiutRGbgYb78gT52PjUc5JAcg59Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
