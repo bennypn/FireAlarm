@@ -1,43 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/ldr_tv"
-        android:layout_width="wrap_content"
+    android:padding="16dp"
+    android:background="#FAFAFA">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LDR"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/_b5300a8b03638984b26cc5662fb691a">
+            </ImageView>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/flame_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Flame"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202" />
+        <!-- STATUS KESELURUHAN -->
+        <TextView
+            android:id="@+id/tvMainStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: Aman"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#2E7D32"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp" />
+        <!-- background hijau gelap -->
 
-    <TextView
-        android:id="@+id/suhu_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="suhu_tv"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- SENSOR SECTION -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Temp -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelTemp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Temp" />
+
+                <TextView
+                    android:id="@+id/valueTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- Humidity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelHum"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Hum" />
+
+                <TextView
+                    android:id="@+id/valueHum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusHum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- FLAME -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelFlame"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Flame" />
+
+                <TextView
+                    android:id="@+id/valueFlame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusFlame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- MQ135 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelMQ135"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="MQ135" />
+
+                <TextView
+                    android:id="@+id/valueMQ135"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusMQ135"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- MQ2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelMQ2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="MQ2" />
+
+                <TextView
+                    android:id="@+id/valueMQ2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusMQ2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- MQ6 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelMQ6"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="MQ6" />
+
+                <TextView
+                    android:id="@+id/valueMQ6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusMQ6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- LDR -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/labelLDR"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="LDR" />
+
+                <TextView
+                    android:id="@+id/valueLDR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/statusLDR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
